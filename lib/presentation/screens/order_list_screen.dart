@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:app_driver/data/order/order.dart';
 import 'package:app_driver/presentation/screens/order_list_item.dart';
+import 'package:app_driver/presentation/styles/Edges.dart';
 import 'package:flutter/material.dart';
 
 class OrderListScreen extends StatefulWidget {
@@ -39,6 +40,10 @@ class OrderListState extends State<OrderListScreen> {
       body: Container(
         color: Colors.black12,
         child: ListView.builder(
+            padding: EdgeInsets.only(
+                top: Edges.Base,
+                bottom: Edges.Base
+            ),
             itemCount: _orders.length,
             itemBuilder: (context, index) => OrderListItem(_orders[index])
         ),
@@ -69,7 +74,7 @@ class OrderListViewModel {
               "Mazda",
               "CX-5",
               "A321B",
-              "Красный"
+              "Красная"
           ),
           [
             Service(
@@ -88,7 +93,7 @@ class OrderListViewModel {
                 "3"
             ),
           ],
-          "12 ДЕК в 12:31"
+          "12 декабря в 18:30"
       );
     });
   }

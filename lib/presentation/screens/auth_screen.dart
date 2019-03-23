@@ -22,8 +22,7 @@ class AuthScreen extends StatelessWidget {
         body:  ListView(
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(top: Edges.BaseGraterSingle),
-              color: Colors.black12,
+              margin: EdgeInsets.only(top: Edges.BaseLowerHalf),
               child: Column(
                 children: <Widget>[
                   Container(
@@ -89,16 +88,9 @@ class AuthScreen extends StatelessWidget {
                   ),
                   padding: EdgeInsets.all(16),
                   onPressed:  () {
-                    /*Scaffold.of(context).showBottomSheet((cont) {
-                      return Container(
-                        width: 700,
-                        height: 500,
-                        color: Colors.amber,
-                      );
-                    });*/
                     navigator.showMainScreen(context);
                   },
-                  color: Colors.blueAccent,
+                  color: Colors.black87,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0)
                   ),
