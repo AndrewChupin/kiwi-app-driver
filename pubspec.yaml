@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^0.12.0+1
+  flutter_svg: ^0.12.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -40,6 +41,16 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/ic_route1.svg
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/roboto_bold.ttf
+        - asset: assets/fonts/roboto_regular.ttf
+        - asset: assets/fonts/roboto_medium.ttf
+        - asset: assets/fonts/roboto_thin.ttf
+        - asset: assets/fonts/roboto_light.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
