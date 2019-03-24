@@ -1,6 +1,7 @@
+import 'package:meta/meta.dart';
 
 
-
+@immutable
 class Order {
   final int id;
   final Place from;
@@ -13,6 +14,7 @@ class Order {
 }
 
 
+@immutable
 class Car {
   final String brand;
   final String model;
@@ -23,6 +25,7 @@ class Car {
 }
 
 
+@immutable
 class Place {
   final String city;
   final String address;
@@ -31,6 +34,7 @@ class Place {
 }
 
 
+@immutable
 class Service {
   final int id;
   final String name;
