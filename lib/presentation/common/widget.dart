@@ -2,6 +2,11 @@ import 'package:app_driver/presentation/common/view_model.dart';
 import 'package:flutter/widgets.dart';
 
 
+enum ScreenState {
+  loading, error, data, success
+}
+
+
 abstract class BaseWidget<VM extends StatefulViewModel> extends StatefulWidget {
 
   BaseState get state;

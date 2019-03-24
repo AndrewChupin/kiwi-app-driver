@@ -1,9 +1,14 @@
 import 'package:app_driver/presentation/common/view_model.dart';
+import 'package:app_driver/presentation/common/widget.dart';
 
 
 class AuthViewState with ViewState {
-  final int counter;
-  AuthViewState({this.counter = 0});
+  int counter;
+  ScreenState screenState;
+  AuthViewState({
+      this.counter = 0,
+      this.screenState = ScreenState.data
+  });
 
   @override
   String toString() {
@@ -17,10 +22,10 @@ class AuthViewModel extends StatefulViewModel<AuthViewState> {
   @override
   AuthViewState get initialState => AuthViewState(counter: 23);
 
-  void loadSomething() {
-    print("loadSomething");
-    updateState(() => AuthViewState(
-
-    ));
+  void signIn(String login, String password, void onSuccess()) {
+    print("SignIn $login $password");
+    if (login == "qwerty" && password == "123") {
+      onSuccess();
+    }
   }
 }
