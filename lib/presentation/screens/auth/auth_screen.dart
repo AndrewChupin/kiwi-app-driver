@@ -1,6 +1,7 @@
 import 'package:app_driver/presentation/common/view_model.dart';
 import 'package:app_driver/presentation/common/widget.dart';
 import 'package:app_driver/presentation/screens/auth/auth_view_model.dart';
+import 'package:app_driver/presentation/screens/main_screen.dart';
 import 'package:app_driver/presentation/styles/edges.dart';
 import 'package:app_driver/presentation/styles/fonts.dart';
 import 'package:flutter/material.dart';
@@ -97,10 +98,10 @@ class AuthScreenState extends BaseState<AuthScreen, AuthViewModel, AuthViewState
             ),
             padding: EdgeInsets.all(16),
             onPressed:  () {
-              /*Navigator.of(context).push(
+              Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => MainScreen()),
-              );*/
-              viewModel.loadSomething();
+              );
+              //viewModel.loadSomething();
             },
             color: Colors.black87,
             shape: RoundedRectangleBorder(
