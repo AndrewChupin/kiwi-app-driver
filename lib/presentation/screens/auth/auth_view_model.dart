@@ -1,13 +1,12 @@
-import 'package:app_driver/presentation/common/view_model.dart';
-import 'package:app_driver/presentation/common/widget.dart';
+import 'package:app_driver/presentation/core/stateful.dart';
+import 'package:app_driver/presentation/core/view_model.dart';
 
 
 class AuthViewState with ViewState {
   int counter;
-  ScreenState screenState;
+
   AuthViewState({
-      this.counter = 0,
-      this.screenState = ScreenState.data
+      this.counter = 0
   });
 
   @override
@@ -27,5 +26,9 @@ class AuthViewModel extends StatefulViewModel<AuthViewState> {
     if (login == "qwerty" && password == "123") {
       onSuccess();
     }
+
+    updateState(() {
+      state.counter = 42;
+    });
   }
 }

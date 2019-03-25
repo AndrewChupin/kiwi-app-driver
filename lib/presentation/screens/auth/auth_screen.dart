@@ -1,12 +1,11 @@
-import 'package:app_driver/presentation/common/view_model.dart';
-import 'package:app_driver/presentation/common/widget.dart';
+import 'package:app_driver/presentation/core/stateless_widget.dart';
 import 'package:app_driver/presentation/screens/auth/auth_view_model.dart';
 import 'package:app_driver/presentation/screens/main_screen.dart';
 import 'package:app_driver/presentation/styles/edges.dart';
 import 'package:app_driver/presentation/styles/fonts.dart';
 import 'package:flutter/material.dart';
 
-class AuthScreen extends BaseWidget<AuthViewModel> {
+class AuthScreen extends BaseStatefulWidget<AuthViewModel> {
 
   @override
   AuthScreenState get state => AuthScreenState(
@@ -15,7 +14,7 @@ class AuthScreen extends BaseWidget<AuthViewModel> {
 }
 
 
-class AuthScreenState extends BaseState<AuthScreen, AuthViewModel, AuthViewState> {
+class AuthScreenState extends BaseStateWithProps<AuthScreen, AuthViewModel, AuthViewState> {
   AuthScreenState(AuthViewModel viewModel) : super(viewModel);
 
   final loginController = TextEditingController();
@@ -137,7 +136,7 @@ class AuthScreenState extends BaseState<AuthScreen, AuthViewModel, AuthViewState
     child: TextField(
         key: key,
         controller: controller,
-        textCapitalization: TextCapitalization.words,
+        textCapitalization: TextCapitalization.none,
         maxLength: maxLength > 0
             ? maxLength
             : null,
@@ -151,7 +150,7 @@ class AuthScreenState extends BaseState<AuthScreen, AuthViewModel, AuthViewState
         ),
         keyboardType: type,
         cursorWidth: 1,
-        cursorColor: Colors.black
+        cursorColor: Colors.black,
     ),
   );
 
