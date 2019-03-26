@@ -39,6 +39,7 @@ class GlobalContext {
 
   void addListener(ContextListener listener) {
     _listeners.add(listener);
+    listener(_currentContext);
   }
 
   void removeListener(ContextListener listener) {

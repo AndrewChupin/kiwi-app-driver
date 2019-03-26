@@ -24,7 +24,7 @@ class AuthViewModel extends StatefulViewModel<AuthViewState> {
 
   final AuthRouter _router;
 
-  AuthViewModel(this._router);
+  AuthViewModel(this._router) : super(_router);
 
   void signIn(String login, String password) {
     print("SignIn $login $password");

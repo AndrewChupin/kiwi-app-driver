@@ -17,7 +17,7 @@ class AuthScreen extends BaseStatefulWidget<AuthViewModel> {
 }
 
 
-class AuthScreenState extends BaseStateWithProps<AuthScreen, AuthViewModel, AuthViewState> {
+class AuthScreenState extends BaseStateWithProps<AuthScreen, AuthViewModel, AuthViewState> with RootScreen {
   AuthScreenState(AuthViewModel viewModel) : super(viewModel);
 
   final loginController = TextEditingController();

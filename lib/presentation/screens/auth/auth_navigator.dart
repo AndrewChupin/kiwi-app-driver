@@ -3,12 +3,12 @@ import 'package:app_driver/presentation/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 
-mixin AuthRouter {
+mixin AuthRouter on BaseRouter {
   void navigateToMain();
 }
 
 
-class AuthNavigator extends BaseNavigator with AuthRouter {
+class AuthNavigator extends BaseRouter with AuthRouter {
 
   @override
   void navigateToMain() {
@@ -20,3 +20,4 @@ class AuthNavigator extends BaseNavigator with AuthRouter {
     );
   }
 }
+

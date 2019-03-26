@@ -1,3 +1,5 @@
+
+import 'package:app_driver/core/common/logger.dart';
 import 'package:app_driver/core/presentation/global_context.dart';
 import 'package:app_driver/core/presentation/stateful.dart';
 import 'package:app_driver/core/presentation/view_model.dart';
@@ -25,15 +27,16 @@ abstract class BaseState<BW extends BaseStatefulWidget<VM>, VM extends Disposabl
 
   @override
   void didChangeDependencies() {
+    log("BaseState didChangeDependencies");
     super.didChangeDependencies();
-    GlobalContext.shared.attach(context);
+    viewModel.attach();
   }
 
   @override
   @mustCallSuper
   void dispose() {
+    log("BaseState dispose");
     viewModel.dispose();
-    GlobalContext.shared.detach();
     super.dispose();
   }
 }
@@ -56,5 +59,25 @@ abstract class BaseStateWithProps<BW extends BaseStatefulWidget<VM>, VM extends 
     );
 
     return stream;
+  }
+}
+
+
+mixin RootScreen<BW extends BaseStatefulWidget<VM>, VM extends StatefulViewModel<VS>, VS extends ViewState> on BaseState<BW, VM>  {
+  BuildContext get context;
+
+  @override
+  void didChangeDependencies() {
+    log("RootScreen didChangeDependencies");
+    super.didChangeDependencies();
+    GlobalContext.shared.attach(context);
+  }
+
+  @override
+  @mustCallSuper
+  void dispose() {
+    log("RootScreen dispose");
+    super.dispose();
+    GlobalContext.shared.detach();
   }
 }
