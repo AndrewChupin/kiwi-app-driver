@@ -8,13 +8,16 @@ class BaseRouter implements Disposable {
 
   @protected
   Optional<BuildContext> context;
+  ContextListener _listener;
 
   void attach() {
-    GlobalContext.shared.addListener((context) => this.context = context);
+    _listener = (context) => this.context = context;
+    GlobalContext.shared.addListener(_listener);
   }
 
   @override
   void dispose() {
+    GlobalContext.shared.removeListener(_listener);
     context = None();
   }
 }

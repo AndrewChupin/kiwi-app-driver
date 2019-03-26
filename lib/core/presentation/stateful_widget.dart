@@ -63,6 +63,7 @@ abstract class BaseStateWithProps<BW extends BaseStatefulWidget<VM>, VM extends 
 }
 
 
+// mixin для экрана который не имеет родительских виджетов
 mixin RootScreen<BW extends BaseStatefulWidget<VM>, VM extends StatefulViewModel<VS>, VS extends ViewState> on BaseState<BW, VM>  {
   BuildContext get context;
 
