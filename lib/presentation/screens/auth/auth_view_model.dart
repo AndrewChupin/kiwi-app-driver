@@ -1,5 +1,6 @@
-import 'package:app_driver/presentation/core/stateful.dart';
-import 'package:app_driver/presentation/core/view_model.dart';
+import 'package:app_driver/core/presentation/stateful.dart';
+import 'package:app_driver/core/presentation/view_model.dart';
+import 'package:app_driver/presentation/screens/auth/auth_navigator.dart';
 
 
 class AuthViewState with ViewState {
@@ -21,14 +22,14 @@ class AuthViewModel extends StatefulViewModel<AuthViewState> {
   @override
   AuthViewState get initialState => AuthViewState(counter: 23);
 
-  void signIn(String login, String password, void onSuccess()) {
+  final AuthRouter _router;
+
+  AuthViewModel(this._router);
+
+  void signIn(String login, String password) {
     print("SignIn $login $password");
     if (login == "qwerty" && password == "123") {
-      onSuccess();
+      _router.navigateToMain();
     }
-
-    updateState(() {
-      state.counter = 42;
-    });
   }
 }

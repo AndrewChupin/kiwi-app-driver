@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:app_driver/presentation/core/stateful.dart';
+import 'package:app_driver/core/presentation/stateful.dart';
 import 'package:flutter/material.dart';
 
 
@@ -9,7 +9,7 @@ abstract class BaseViewModel {
 }
 
 
-abstract class DisposableViewModel with Disposable {
+abstract class DisposableViewModel extends BaseViewModel with Disposable {
   // TODO логика для экранов без стейта, но с экшенами
 }
 

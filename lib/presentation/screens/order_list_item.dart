@@ -13,6 +13,7 @@ class OrderListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+        elevation: 2,
         margin: EdgeInsets.only(
             top: Edges.Quarter,
             bottom: Edges.Quarter

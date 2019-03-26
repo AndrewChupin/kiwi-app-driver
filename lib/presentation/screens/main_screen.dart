@@ -11,7 +11,10 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       body: OrderListScreen(),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
+        currentIndex: 0, // this will be set when a new tab is tapped,
+        onTap: (index) {
+
+        },
         items: [
           BottomNavigationBarItem(
             icon: new Icon(Icons.drive_eta),

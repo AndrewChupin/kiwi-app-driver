@@ -1,4 +1,5 @@
 
+
 // mixin - маркер
 mixin ViewState {}
 

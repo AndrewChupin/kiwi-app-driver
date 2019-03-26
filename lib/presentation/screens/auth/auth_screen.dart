@@ -1,6 +1,7 @@
-import 'package:app_driver/presentation/core/stateless_widget.dart';
+
+import 'package:app_driver/core/presentation/stateful_widget.dart';
+import 'package:app_driver/presentation/screens/auth/auth_navigator.dart';
 import 'package:app_driver/presentation/screens/auth/auth_view_model.dart';
-import 'package:app_driver/presentation/screens/main_screen.dart';
 import 'package:app_driver/presentation/styles/edges.dart';
 import 'package:app_driver/presentation/styles/fonts.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,9 @@ class AuthScreen extends BaseStatefulWidget<AuthViewModel> {
 
   @override
   AuthScreenState get state => AuthScreenState(
-      AuthViewModel()
+      AuthViewModel(
+        AuthNavigator()
+      )
   );
 }
 
@@ -104,10 +107,7 @@ class AuthScreenState extends BaseStateWithProps<AuthScreen, AuthViewModel, Auth
               onPressed:  () {
                 viewModel.signIn(
                     loginController.text,
-                    passController.text,
-                    () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => MainScreen()),
-                    )
+                    passController.text
                 );
               },
               color: Colors.black87,
