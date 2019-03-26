@@ -15,11 +15,13 @@ class OrderListItem extends StatelessWidget {
     return Card(
         elevation: 2,
         margin: EdgeInsets.only(
-            top: Edges.Quarter,
-            bottom: Edges.Quarter
+            top: 6,
+            bottom: 6,
+            left: 6,
+            right: 6,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4.0),
+          borderRadius: BorderRadius.circular(8.0),
         ),
         child: Column(
           children: <Widget>[
@@ -45,7 +47,7 @@ class OrderListItem extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.indigoAccent,
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(4),
+                            topLeft: Radius.circular(8),
                             bottomRight: Radius.circular(12)
                         )
                     ),
@@ -109,7 +111,7 @@ class OrderListItem extends StatelessWidget {
                                       Text(
                                         order.from.city,
                                         style: TextStyle(
-                                            fontSize: FontSizes.Normal,
+                                            fontSize: FontSizes.High,
                                             fontWeight: FontWeight.bold
                                         ),
                                       ),
@@ -129,7 +131,7 @@ class OrderListItem extends StatelessWidget {
                                         textAlign: TextAlign.left,
                                         maxLines: 1,
                                         style: TextStyle(
-                                            fontSize: FontSizes.Normal,
+                                            fontSize: FontSizes.High,
                                             fontWeight: FontWeight.bold
                                         ),
                                       ),
