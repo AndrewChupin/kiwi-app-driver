@@ -13,7 +13,7 @@ class OrderListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        elevation: 2,
+        elevation: 1,
         margin: EdgeInsets.only(
             top: 6,
             bottom: 6,
@@ -111,13 +111,15 @@ class OrderListItem extends StatelessWidget {
                                       Text(
                                         order.from.city,
                                         style: TextStyle(
-                                            fontSize: FontSizes.High,
-                                            fontWeight: FontWeight.bold
+                                            color: Colors.black,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600
                                         ),
                                       ),
                                       Text(
                                         order.from.address,
                                         style: TextStyle(
+                                            color: Color(0xFF4E4E4E),
                                             fontSize: FontSizes.Low,
                                             fontWeight: FontWeight.normal
                                         ),
@@ -131,13 +133,15 @@ class OrderListItem extends StatelessWidget {
                                         textAlign: TextAlign.left,
                                         maxLines: 1,
                                         style: TextStyle(
-                                            fontSize: FontSizes.High,
-                                            fontWeight: FontWeight.bold
+                                            color: Colors.black,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600
                                         ),
                                       ),
                                       Text(
                                         order.to.address,
                                         style: TextStyle(
+                                            color: Color(0xFF4E4E4E),
                                             fontSize: FontSizes.Low,
                                             fontWeight: FontWeight.normal
                                         ),

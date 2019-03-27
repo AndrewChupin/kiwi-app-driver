@@ -38,7 +38,7 @@ class OrderListState extends State<OrderListScreen> {
         title: Text("Список заказов"),
       ),
       body: Container(
-        color: Colors.black12,
+        color: Color(0xFFECF0F5),
         child: ListView.builder(
             padding: EdgeInsets.only(
                 top: Edges.Base,

@@ -2,18 +2,45 @@ import 'package:app_driver/presentation/screens/order_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    return MainScreenState();
+  }
+}
 
 
+class MainScreenState extends State<MainScreen> {
+
+  var currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: OrderListScreen(),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped,
-        onTap: (index) {
+    Widget bodyPage;
+    switch (currentIndex) {
+      case 0:
+        bodyPage = OrderListScreen();
+        break;
+      case 1:
+        bodyPage = OrderListScreen();
+        break;
+      default:
+        bodyPage = OrderListScreen();
+        break;
+    }
 
+    return Scaffold(
+      body: bodyPage,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        selectedItemColor: Colors.indigoAccent,
+        onTap: (index) {
+          setState(() {
+            currentIndex = index;
+          });
         },
         items: [
           BottomNavigationBarItem(
