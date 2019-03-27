@@ -1,6 +1,6 @@
 import 'package:app_driver/core/common/optional.dart';
 import 'package:app_driver/core/presentation/navigator.dart';
-import 'package:app_driver/presentation/screens/main_screen.dart';
+import 'package:app_driver/presentation/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -9,7 +9,7 @@ mixin AuthRouter on BaseRouter {
 }
 
 
-class AuthNavigator extends BaseRouter with AuthRouter {
+class AuthRouterDefault extends BaseRouter with AuthRouter {
 
   @override
   void navigateToMain() {

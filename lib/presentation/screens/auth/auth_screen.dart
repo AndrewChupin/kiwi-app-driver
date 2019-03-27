@@ -1,23 +1,23 @@
 
 import 'package:app_driver/core/presentation/stateful_widget.dart';
-import 'package:app_driver/presentation/screens/auth/auth_navigator.dart';
+import 'package:app_driver/presentation/screens/auth/auth_router.dart';
 import 'package:app_driver/presentation/screens/auth/auth_view_model.dart';
 import 'package:app_driver/presentation/styles/edges.dart';
 import 'package:app_driver/presentation/styles/fonts.dart';
 import 'package:flutter/material.dart';
 
-class AuthScreen extends BaseStatefulWidget<AuthViewModel> {
+class AuthScreen extends BaseStatefulWidget<AuthScreenState, AuthViewModel> {
 
   @override
   AuthScreenState get state => AuthScreenState(
       AuthViewModel(
-        AuthNavigator()
+        AuthRouterDefault()
       )
   );
 }
 
 
-class AuthScreenState extends BaseStateWithProps<AuthScreen, AuthViewModel, AuthViewState> with RootScreen {
+class AuthScreenState extends BaseStateWithProps<AuthViewModel, AuthViewState> with RootScreen {
   AuthScreenState(AuthViewModel viewModel) : super(viewModel);
 
   final loginController = TextEditingController();

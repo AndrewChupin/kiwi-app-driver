@@ -1,5 +1,5 @@
 import 'package:app_driver/presentation/screens/auth/auth_screen.dart';
-import 'package:app_driver/presentation/screens/main_screen.dart';
+import 'package:app_driver/presentation/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 
 

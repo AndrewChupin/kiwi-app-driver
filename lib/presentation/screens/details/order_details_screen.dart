@@ -1,18 +1,27 @@
+import 'package:app_driver/core/presentation/navigator.dart';
+import 'package:app_driver/core/presentation/stateful.dart';
+import 'package:app_driver/core/presentation/stateful_widget.dart';
+import 'package:app_driver/core/presentation/view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 
-class OrderDetailsScreen extends StatefulWidget {
+class OrderDetailsScreen extends BaseStatefulWidget<OrderDetailsState, OrderDetailsViewModel> {
+
   @override
-  State<StatefulWidget> createState() {
-    return OrderDetailsState();
-  }
+  OrderDetailsState get state => OrderDetailsState(
+      OrderDetailsViewModel(
+          OrderDetailsRouterDefault()
+      )
+  );
 }
 
 
-class OrderDetailsState extends State<OrderDetailsScreen> {
+class OrderDetailsState extends BaseStateWithProps<OrderDetailsViewModel, OrderDetailsViewState> {
+  OrderDetailsState(OrderDetailsViewModel viewModel) : super(viewModel);
+
   @override
-  Widget build(BuildContext context) {
+  Widget render(BuildContext context, OrderDetailsViewState state) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Заказ"),
@@ -27,4 +36,17 @@ class OrderDetailsState extends State<OrderDetailsScreen> {
       ),
     );
   }
+}
+
+
+mixin OrderDetailsRouter on BaseRouter {}
+class OrderDetailsRouterDefault extends BaseRouter with OrderDetailsRouter {}
+
+
+class OrderDetailsViewState with ViewState {}
+class OrderDetailsViewModel extends StatefulViewModel<OrderDetailsViewState> {
+  OrderDetailsViewModel(OrderDetailsRouter router) : super(router);
+
+  @override
+  OrderDetailsViewState get initialState => OrderDetailsViewState();
 }

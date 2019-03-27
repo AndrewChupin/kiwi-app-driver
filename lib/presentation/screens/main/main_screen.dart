@@ -1,23 +1,30 @@
+import 'package:app_driver/core/presentation/stateful_widget.dart';
+import 'package:app_driver/presentation/screens/main/main_router.dart';
+import 'package:app_driver/presentation/screens/main/main_view_model.dart';
 import 'package:app_driver/presentation/screens/order_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class MainScreen extends StatefulWidget {
 
-  @override
-  State<StatefulWidget> createState() {
-    return MainScreenState();
-  }
+class MainScreen extends BaseStatefulWidget<MainState, MainViewModel> {
+
+  MainState get state => MainState(
+      MainViewModel(
+          MainRouterDefault()
+      )
+  );
 }
 
 
-class MainScreenState extends State<MainScreen> {
+class MainState extends BaseStateWithProps<MainViewModel, MainViewState>  {
 
+  MainState(viewModel) : super(viewModel);
   var currentIndex = 0;
 
   @override
-  Widget build(BuildContext context) {
+  Widget render(BuildContext context, MainViewState state) {
     Widget bodyPage;
+
     switch (currentIndex) {
       case 0:
         bodyPage = OrderListScreen();

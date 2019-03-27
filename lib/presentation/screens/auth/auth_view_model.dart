@@ -1,6 +1,6 @@
 import 'package:app_driver/core/presentation/stateful.dart';
 import 'package:app_driver/core/presentation/view_model.dart';
-import 'package:app_driver/presentation/screens/auth/auth_navigator.dart';
+import 'package:app_driver/presentation/screens/auth/auth_router.dart';
 
 
 class AuthViewState with ViewState {
