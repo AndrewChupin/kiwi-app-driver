@@ -1,4 +1,5 @@
 import 'package:app_driver/core/presentation/stateful_widget.dart';
+import 'package:app_driver/presentation/screens/details/order_details_screen.dart';
 import 'package:app_driver/presentation/screens/main/main_router.dart';
 import 'package:app_driver/presentation/screens/main/main_view_model.dart';
 import 'package:app_driver/presentation/screens/order_list_screen.dart';
@@ -27,7 +28,7 @@ class MainState extends BaseStateWithProps<MainViewModel, MainViewState>  {
 
     switch (currentIndex) {
       case 0:
-        bodyPage = OrderListScreen();
+        bodyPage = OrderDetailsScreen();
         break;
       case 1:
         bodyPage = OrderListScreen();

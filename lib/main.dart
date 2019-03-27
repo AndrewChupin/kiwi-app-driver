@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Roboto",
       ),
       navigatorKey: navigatorKey,
-      home: AuthScreen()
+      home: MainScreen()
     );
   }
 }
