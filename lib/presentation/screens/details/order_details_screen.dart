@@ -100,10 +100,9 @@ class OrderDetailsState extends BaseStateWithProps<OrderDetailsViewModel, OrderD
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Icon(
-                      Icons.drive_eta,
-                      color: Color(0xFF373F47),
-                      size: 20,
+                  Padding(
+                    padding: EdgeInsets.all(4),
+                    child: SvgPicture.asset("assets/images/ic_car.svg"),
                   ),
                   SizedBox(width: 16),
                   Column(
@@ -147,10 +146,9 @@ class OrderDetailsState extends BaseStateWithProps<OrderDetailsViewModel, OrderD
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Icon(
-                    Icons.calendar_today,
-                    color: Color(0xFF373F47),
-                    size: 20,
+                  Padding(
+                    padding: EdgeInsets.all(4),
+                    child: SvgPicture.asset("assets/images/ic_calendar.svg"),
                   ),
                   SizedBox(width: 16),
                   Column(

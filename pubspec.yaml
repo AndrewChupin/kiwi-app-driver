@@ -46,6 +46,8 @@ flutter:
     - assets/images/ic_air.svg
     - assets/images/ic_city.svg
     - assets/images/ic_dops.svg
+    - assets/images/ic_calendar.svg
+    - assets/images/ic_car.svg
   fonts:
     - family: Roboto
       fonts:
