@@ -16,4 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 [Link](beproducer://new_registration)
-[Link](beproducer://www.google.ru)
+[Link](www.google.ru)
